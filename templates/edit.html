@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Edit User</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #343a40; 
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background: white;
+            border: 1px solid #80ffaa;
+            
+        }
+
+        .form-control {
+            border: 1px solid #80ffaa;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: #80ffaa;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            outline: none;
+        }
+        .form-control::placeholder {
+            color: #6c757d;
+            opacity: 1;
+        }
+        .form-control:hover {
+            border-color: #80ffaa;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-success {
+            border: none;
+            height: 38px; 
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center mb-4" style="font-family: 'Georgia', serif;">Update Information</h2>
+    <form action="/edit/{{ user[0] }}" method="POST">
+        <input type="hidden" name="id" value="{{ user[0] }}">
+        <div class="form-group">
+            <label style="font-family: 'Georgia', serif;">Name:</label>
+            <input style="font-family: 'Georgia', serif;" type="text" name="name" class="form-control" value="{{ user[1] }}" required>
+        </div>
+        <div class="form-group">
+            <label style="font-family: 'Georgia', serif;">Department:</label>
+            <input style="font-family: 'Georgia', serif;" type="text" name="department" class="form-control" value="{{ user[2] }}" required>
+        </div>
+        <div class="form-group">
+            <label style="font-family: 'Georgia', serif;">College Name:</label>
+            <input style="font-family: 'Georgia', serif;" type="text" name="college_name" class="form-control" value="{{ user[3] }}" required>
+        </div>
+        <div class="form-group">
+            <label style="font-family: 'Georgia', serif;">Phone No:</label>
+            <input style="font-family: 'Georgia', serif;" type="text" name="phone_number" class="form-control" value="{{ user[4] }}" required>
+        </div>
+        <div class="form-group">
+            <label style="font-family: 'Georgia', serif;">Email:</label>
+            <input style="font-family: 'Georgia', serif;" type="email" name="email" class="form-control" value="{{ user[5] }}" required>
+        </div>
+        <button type="submit" style="font-family: 'Georgia', serif;" class="btn btn-success btn-block"><b>Update</b></button>
+    </form>
+</div>
+<footer class="bg-success" style=" color: white; padding: 20px; text-align: center; margin-top: 4.9%;">
+    <div>
+        <p style="font-family: 'Georgia', serif;"><b>&copy; 2024 Komban Tech. All rights reserved.</b></p>
+    </div>
+</footer>
+</body>
+</html>
